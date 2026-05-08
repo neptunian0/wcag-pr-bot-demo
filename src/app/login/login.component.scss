@@ -1,5 +1,49 @@
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 1.5rem;
+  background: white;
+  border-bottom: 1px solid var(--p-surface-200, #e2e8f0);
+}
+
+.hero-banner {
+  height: 32px;
+  width: auto;
+}
+
+.header-tools {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.header-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+
+  &:hover { background: var(--p-surface-100, #f1f5f9); }
+  &:focus-visible {
+    outline: 2px solid var(--p-primary-color);
+    outline-offset: 1px;
+  }
+
+  i { font-size: 1.05rem; }
+}
+
+.header-help {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--p-text-muted-color, #64748b);
+
+  a { cursor: pointer; }
+}
+
 .login-page {
-  min-height: 100vh;
+  min-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
   align-items: center;
