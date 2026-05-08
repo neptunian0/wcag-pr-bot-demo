@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 32" role="img" aria-label="Validis banner">
+  <rect width="32" height="32" rx="6" fill="#2563eb"/>
+  <text x="16" y="22" text-anchor="middle" fill="white" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="16" font-weight="600">V</text>
+  <text x="40" y="22" fill="#0f172a" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14" font-weight="600">Validis</text>
+</svg>
