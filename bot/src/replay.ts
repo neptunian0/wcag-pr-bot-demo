@@ -93,7 +93,12 @@ async function main() {
 
   const blockers = findings.filter((f) => f.severity === "blocking");
   const nonBlockers = findings.length - blockers.length;
-  const event = blockers.length > 0 ? "REQUEST_CHANGES" : "COMMENT";
+  // Demo limitation: GitHub blocks REQUEST_CHANGES from a PR's own author.
+  // The bot would normally run as github-actions[bot] in production and
+  // could request changes on user PRs. For the offline replay, the
+  // [BLOCKING] label in each comment body conveys the tier; the review
+  // event itself stays COMMENT.
+  const event = "COMMENT";
 
   const summary =
     blockers.length > 0
