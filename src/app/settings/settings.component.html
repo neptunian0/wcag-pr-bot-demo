@@ -35,6 +35,22 @@
     </div>
   </fieldset>
 
+  <h3>Email notifications</h3>
+  <p class="section-hint">Where should automated reports and alerts be sent?</p>
+  <div class="form-row">
+    <label for="notificationEmail">Notification email</label>
+    <input
+      pInputText
+      id="notificationEmail"
+      type="email"
+      [(ngModel)]="notificationEmail"
+      (blur)="notificationEmailTouched = true"
+    />
+    <p *ngIf="notificationEmailIsInvalid" class="error-message">
+      Enter a valid notification email address.
+    </p>
+  </div>
+
   <h3>Team</h3>
   <p-button label="Invite teammate" icon="pi pi-user-plus" (onClick)="openInviteModal()"></p-button>
 
