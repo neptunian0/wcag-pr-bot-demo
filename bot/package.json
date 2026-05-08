@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "review": "tsx src/review.ts",
+    "replay": "tsx src/replay.ts",
     "test-prompt": "tsx src/test-prompt.ts",
     "dashboard": "tsx src/dashboard.ts",
     "classify": "tsx src/classify.ts",

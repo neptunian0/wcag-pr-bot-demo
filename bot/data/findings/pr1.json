@@ -1,0 +1,44 @@
+{
+  "findings": [
+    {
+      "file": "src/app/login/login.component.html",
+      "line": 2,
+      "wcag_sc": "1.1.1",
+      "severity": "blocking",
+      "confidence": "high",
+      "title": "img missing alt attribute",
+      "message": "The new hero banner image has no alt attribute. Screen reader users will hear the file name (`banner.svg`) or nothing useful at all. Add `alt=\"Validis\"` if the banner is informative, or `alt=\"\"` if it's purely decorative and the surrounding context already conveys the information.",
+      "code_snippet": "  <img src=\"/banner.svg\" class=\"hero-banner\" />"
+    },
+    {
+      "file": "src/app/login/login.component.html",
+      "line": 4,
+      "wcag_sc": "4.1.2",
+      "severity": "blocking",
+      "confidence": "high",
+      "title": "Icon-only search button has no accessible name",
+      "message": "This button contains only the `pi-search` icon and no visible text. Screen reader users hear nothing about its purpose. Add `aria-label=\"Search\"` to the `<button>` element.",
+      "code_snippet": "    <button type=\"button\" class=\"header-btn\" (click)=\"onSearch()\">"
+    },
+    {
+      "file": "src/app/login/login.component.html",
+      "line": 7,
+      "wcag_sc": "4.1.2",
+      "severity": "blocking",
+      "confidence": "high",
+      "title": "Icon-only user-menu button has no accessible name",
+      "message": "Same pattern as the search button above — the `pi-user` icon has no visible text and no `aria-label`. Add `aria-label=\"User menu\"` (or whatever the menu actually does) so assistive tech announces a purpose.",
+      "code_snippet": "    <button type=\"button\" class=\"header-btn\" (click)=\"onUserMenu()\">"
+    },
+    {
+      "file": "src/app/login/login.component.html",
+      "line": 12,
+      "wcag_sc": "2.4.4",
+      "severity": "non-blocking",
+      "confidence": "medium",
+      "title": "Non-descriptive link text \"Click here\"",
+      "message": "Out of context — e.g. when a screen reader user pulls a list of links from the page — \"Click here\" doesn't convey purpose. The surrounding sentence does provide some context, so this is a judgment call rather than a clear blocker. Consider rephrasing so the link reads as e.g. `<a>sign up for an account</a>`.",
+      "code_snippet": "    Don't have an account? <a (click)=\"onHelp()\">Click here</a> to sign up."
+    }
+  ]
+}

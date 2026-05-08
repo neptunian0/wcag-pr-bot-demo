@@ -1,0 +1,24 @@
+{
+  "findings": [
+    {
+      "file": "src/app/settings/settings.component.html",
+      "line": 41,
+      "wcag_sc": "3.3.2",
+      "severity": "non-blocking",
+      "confidence": "medium",
+      "title": "Required field has no required indicator",
+      "message": "The `Notification email` label has no asterisk, no \"(required)\" text, and the input has no `aria-required=\"true\"` — yet the validator treats an empty value as invalid. Sighted users have no visible cue, and assistive tech doesn't get the programmatic signal. Add a visible `*` (with a corresponding legend, e.g. \"* indicates a required field\") and `aria-required=\"true\"` on the input.",
+      "code_snippet": "    <label for=\"notificationEmail\">Notification email</label>"
+    },
+    {
+      "file": "src/app/settings/settings.component.html",
+      "line": 42,
+      "wcag_sc": "3.3.1",
+      "severity": "blocking",
+      "confidence": "high",
+      "title": "Error message not linked to input via aria-describedby",
+      "message": "When the validator fires, the `<p class=\"error-message\">` is rendered alongside the input but isn't associated with it programmatically. Screen reader users will hear the input's name but never the error. Give the error `<p>` an `id` (e.g. `notificationEmailError`) and add `aria-describedby=\"notificationEmailError\"` plus `aria-invalid=\"true\"` (bound to `notificationEmailIsInvalid`) on the input.",
+      "code_snippet": "    <input"
+    }
+  ]
+}

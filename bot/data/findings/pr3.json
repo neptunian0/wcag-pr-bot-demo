@@ -1,0 +1,14 @@
+{
+  "findings": [
+    {
+      "file": "src/app/engagements/engagements.component.scss",
+      "line": 37,
+      "wcag_sc": "1.4.11",
+      "severity": "non-blocking",
+      "confidence": "high",
+      "title": "Disabled button uses 0.4 opacity — fails non-text contrast",
+      "message": "Reverting to `opacity: 0.4` on the disabled state pushes the button below the 3:1 non-text contrast threshold. Per the team's WCAG policy this is currently in remediation, so the bot flags it as non-blocking — but this change reintroduces an issue that was already addressed on master. Recommend keeping the slate-grey background pattern instead, or pairing the opacity with a parallel a11y-only signal (e.g. `aria-disabled` plus a tooltip explaining why it's disabled).",
+      "code_snippet": "    opacity: 0.4;"
+    }
+  ]
+}
