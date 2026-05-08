@@ -10,6 +10,10 @@ permissions:
 
 jobs:
   review:
+    # Set the repo variable WCAG_BOT_ENABLED=true to turn the bot on.
+    # Until then the workflow is visible in the repo but is cleanly skipped
+    # on every PR (avoids a failing check when ANTHROPIC_API_KEY isn't set).
+    if: ${{ vars.WCAG_BOT_ENABLED == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
