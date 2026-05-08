@@ -2,13 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
-
-interface Engagement {
-  id: string;
-  client: string;
-  status: 'active' | 'review' | 'archived';
-  updated: string;
-}
+import type { Engagement } from './engagement.types';
 
 @Component({
   selector: 'app-engagements',

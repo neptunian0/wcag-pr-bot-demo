@@ -1,6 +1,9 @@
 <div class="page">
   <header class="page-header">
-    <h1>Engagements</h1>
+    <div class="page-title">
+      <h1>Engagements</h1>
+      <span class="count-badge">{{ engagements.length }} total</span>
+    </div>
     <div class="header-actions">
       <!-- Correct pattern: action buttons have visible text labels -->
       <p-button label="New engagement" icon="pi pi-plus" (onClick)="onCreate()"></p-button>
