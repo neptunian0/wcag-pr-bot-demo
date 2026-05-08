@@ -1,0 +1,67 @@
+<div class="page">
+  <h1>Settings</h1>
+
+  <!-- A11Y-ISSUE: S1 — heading hierarchy skips h2, going from h1 directly to h3 (WCAG 1.3.1, Non-blocking) -->
+  <h3>Account details</h3>
+
+  <div class="form-row">
+    <!-- A11Y-ISSUE: S3 — required email field has no asterisk, "(required)" text, or aria-required indicator (WCAG 3.3.2, Non-blocking) -->
+    <label for="contactEmail">Email</label>
+    <!-- A11Y-ISSUE: S4 — error message not linked to input via aria-describedby (WCAG 3.3.1, Blocking) -->
+    <input
+      pInputText
+      id="contactEmail"
+      type="email"
+      [(ngModel)]="email"
+      (blur)="emailTouched = true"
+    />
+    <p *ngIf="emailIsInvalid" class="error-message">
+      Please enter a valid email address.
+    </p>
+  </div>
+
+  <h3>Notification preferences</h3>
+  <!-- Correct pattern: fieldset + legend group related checkboxes -->
+  <fieldset class="prefs">
+    <legend>Send me an email when:</legend>
+    <div class="pref-row">
+      <p-checkbox inputId="prefDigest" [(ngModel)]="prefs.weeklyDigest" binary="true"></p-checkbox>
+      <label for="prefDigest">A new weekly digest is ready</label>
+    </div>
+    <div class="pref-row">
+      <p-checkbox inputId="prefProduct" [(ngModel)]="prefs.productUpdates" binary="true"></p-checkbox>
+      <label for="prefProduct">There are product updates</label>
+    </div>
+    <div class="pref-row">
+      <p-checkbox inputId="prefBilling" [(ngModel)]="prefs.billing" binary="true"></p-checkbox>
+      <label for="prefBilling">Billing or invoice activity occurs</label>
+    </div>
+  </fieldset>
+
+  <h3>Team</h3>
+  <p-button label="Invite teammate" icon="pi pi-user-plus" (onClick)="openInviteModal()"></p-button>
+
+  <div class="actions-row">
+    <!-- Correct pattern: native <button> with visible text label -->
+    <button type="button" class="save-btn" (click)="onSave()">Save changes</button>
+  </div>
+</div>
+
+<!-- Custom dialog so the close-button issue lives in this PR's source rather than inside PrimeNG's p-dialog -->
+<div class="modal-backdrop" *ngIf="showInviteModal" (click)="closeInviteModal()">
+  <div class="modal-window" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Invite a teammate</h2>
+      <!-- A11Y-ISSUE: S2 — modal close button has no accessible name (× character only, no aria-label) (WCAG 4.1.2, Blocking) -->
+      <button type="button" class="modal-close" (click)="closeInviteModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <p>Send an invitation email to a new teammate.</p>
+      <label for="inviteEmail">Their email</label>
+      <input pInputText id="inviteEmail" type="email" />
+    </div>
+    <div class="modal-footer">
+      <p-button label="Send invite" (onClick)="closeInviteModal()"></p-button>
+    </div>
+  </div>
+</div>
