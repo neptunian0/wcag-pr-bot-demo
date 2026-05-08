@@ -1,13 +1,10 @@
 <div class="login-page">
-  <!-- A11Y-ISSUE: L1 — img missing alt attribute (WCAG 1.1.1, Blocking) -->
   <img src="/logo.svg" class="logo" />
 
   <div class="login-card">
-    <!-- A11Y-ISSUE: L2 — page heading hierarchy starts at h2, no h1 (WCAG 1.3.1, 2.4.10, Non-blocking) -->
     <h2>Sign in to Validis</h2>
 
     <form (ngSubmit)="onLogin()" #loginForm="ngForm">
-      <!-- A11Y-ISSUE: L3 — email input labelled by placeholder only, no <label> (WCAG 1.3.1, 3.3.2, 4.1.2, Blocking) -->
       <input
         pInputText
         type="email"
@@ -17,7 +14,6 @@
         class="form-input"
       />
 
-      <!-- A11Y-ISSUE: L4 — password input labelled by placeholder only, no <label> (WCAG 1.3.1, 3.3.2, 4.1.2, Blocking) -->
       <input
         pInputText
         type="password"
@@ -35,10 +31,8 @@
 
       <p-button label="Sign in" type="submit" styleClass="full-width"></p-button>
 
-      <!-- A11Y-ISSUE: L5 — div with (click) handler used instead of <button> (WCAG 4.1.2, 2.1.1, Blocking) -->
       <div class="forgot-link" (click)="onForgot()">Forgot password?</div>
 
-      <!-- A11Y-ISSUE: L6 — link text "Click here" is non-descriptive (WCAG 2.4.4, Non-blocking) -->
       <p class="help-text">
         Need help signing in? <a (click)="onHelp()">Click here</a> for assistance.
       </p>

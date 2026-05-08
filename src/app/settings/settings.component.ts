@@ -29,7 +29,6 @@ export class SettingsComponent {
   }
 
   closeInviteModal() {
-    // A11Y-ISSUE: S5 — modal close does not return focus to the trigger button (WCAG 2.4.3, Non-blocking)
     this.showInviteModal = false;
   }
 

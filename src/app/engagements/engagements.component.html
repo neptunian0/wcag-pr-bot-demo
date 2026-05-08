@@ -6,7 +6,6 @@
       <p-button label="New engagement" icon="pi pi-plus" (onClick)="onCreate()"></p-button>
       <p-button label="Import data" icon="pi pi-upload" severity="secondary" (onClick)="onImport()"></p-button>
 
-      <!-- A11Y-ISSUE: E4 — disabled button styled with 0.4 opacity, fails non-text contrast (WCAG 1.4.11, Non-blocking) -->
       <button
         type="button"
         class="generate-report"
@@ -18,7 +17,6 @@
     </div>
   </header>
 
-  <!-- A11Y-ISSUE: E5 — sortable column headers have no static aria-sort attribute (WCAG 1.3.1, Non-blocking) -->
   <p-table [value]="engagements" sortMode="single" styleClass="p-datatable-sm">
     <ng-template pTemplate="header">
       <tr>
@@ -35,7 +33,6 @@
         <td>{{ eng.id }}</td>
         <td>{{ eng.client }}</td>
         <td>
-          <!-- A11Y-ISSUE: E1 — status conveyed by background colour only; title is false-positive bait but not sufficient (WCAG 1.4.1, Blocking) -->
           <span
             class="status-dot"
             [class.status-active]="eng.status === 'active'"
@@ -46,11 +43,9 @@
         </td>
         <td>{{ eng.updated }}</td>
         <td class="row-actions">
-          <!-- A11Y-ISSUE: E2 — icon-only edit button missing aria-label (WCAG 4.1.2, Blocking) -->
           <button type="button" class="icon-btn" (click)="onEdit(eng)">
             <i class="pi pi-pencil"></i>
           </button>
-          <!-- A11Y-ISSUE: E3 — icon-only delete button missing aria-label (WCAG 4.1.2, Blocking) -->
           <button type="button" class="icon-btn" (click)="onDelete(eng)">
             <i class="pi pi-trash"></i>
           </button>
