@@ -6,6 +6,8 @@
   "scripts": {
     "review": "tsx src/review.ts",
     "test-prompt": "tsx src/test-prompt.ts",
+    "dashboard": "tsx src/dashboard.ts",
+    "classify": "tsx src/classify.ts",
     "build": "tsc"
   },
   "dependencies": {

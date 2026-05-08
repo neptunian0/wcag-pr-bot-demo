@@ -1,0 +1,32 @@
+{
+  "weekStart": "2026-05-04",
+  "weekEnd": "2026-05-10",
+  "introduced": 6,
+  "resolved": 5,
+  "openWeakDismissals": [
+    {
+      "pr": 4,
+      "criterion": "3.3.2",
+      "title": "Required email field has no required indicator",
+      "rationale": "Will fix in next PR"
+    },
+    {
+      "pr": 12,
+      "criterion": "1.4.4",
+      "title": "Settings text resizes with browser zoom but breaks layout",
+      "rationale": "Tracked"
+    }
+  ],
+  "topDismissed": [
+    { "criterion": "2.4.4", "label": "Link purpose (in context)", "count": 3 },
+    { "criterion": "1.4.11", "label": "Non-text contrast",          "count": 2 },
+    { "criterion": "3.3.2",  "label": "Form labels and instructions", "count": 2 },
+    { "criterion": "2.4.10", "label": "Section headings",            "count": 1 }
+  ],
+  "trendData": [
+    { "week": "2026-04-13", "introduced": 12, "resolved":  3 },
+    { "week": "2026-04-20", "introduced":  9, "resolved":  7 },
+    { "week": "2026-04-27", "introduced":  7, "resolved":  8 },
+    { "week": "2026-05-04", "introduced":  6, "resolved":  5 }
+  ]
+}
