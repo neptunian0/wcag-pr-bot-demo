@@ -27,4 +27,12 @@ export class LoginComponent {
   onHelp() {
     console.log('Help clicked');
   }
+
+  onSearch() {
+    console.log('Search clicked');
+  }
+
+  onUserMenu() {
+    console.log('User menu clicked');
+  }
 }
