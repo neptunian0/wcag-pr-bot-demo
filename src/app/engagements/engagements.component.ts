@@ -27,6 +27,22 @@ export class EngagementsComponent {
   ];
 
   reportsAvailable = false;
+  selectedIds = new Set<string>();
+
+  toggleSelection(id: string) {
+    if (this.selectedIds.has(id)) {
+      this.selectedIds.delete(id);
+    } else {
+      this.selectedIds.add(id);
+    }
+  }
+
+  archiveSelected() {
+    this.engagements = this.engagements.map((e) =>
+      this.selectedIds.has(e.id) ? { ...e, status: 'archived' as const } : e
+    );
+    this.selectedIds.clear();
+  }
 
   onCreate() {}
   onImport() {}

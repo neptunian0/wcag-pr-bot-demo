@@ -24,6 +24,35 @@
   }
 }
 
+.archive-selected {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #c2410c;
+  background: #fff7ed;
+  color: #9a3412;
+  cursor: pointer;
+  font-size: 0.95rem;
+
+  &:disabled {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .generate-report {
   padding: 0.5rem 1rem;
   border-radius: 6px;
