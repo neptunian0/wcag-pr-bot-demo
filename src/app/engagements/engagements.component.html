@@ -8,6 +8,15 @@
 
       <button
         type="button"
+        class="archive-selected"
+        [disabled]="selectedIds.size === 0"
+        (click)="archiveSelected()"
+      >
+        Archive selected ({{ selectedIds.size }})
+      </button>
+
+      <button
+        type="button"
         class="generate-report"
         [disabled]="!reportsAvailable"
         (click)="onGenerateReport()"
@@ -20,6 +29,7 @@
   <p-table [value]="engagements" sortMode="single" styleClass="p-datatable-sm">
     <ng-template pTemplate="header">
       <tr>
+        <th scope="col"><span class="sr-only">Select row</span></th>
         <th pSortableColumn="id">Reference</th>
         <th pSortableColumn="client">Client</th>
         <th pSortableColumn="status">Status</th>
@@ -30,6 +40,15 @@
 
     <ng-template pTemplate="body" let-eng>
       <tr>
+        <td>
+          <input
+            type="checkbox"
+            [id]="'select-' + eng.id"
+            [checked]="selectedIds.has(eng.id)"
+            (change)="toggleSelection(eng.id)"
+            [attr.aria-label]="'Select ' + eng.client"
+          />
+        </td>
         <td>{{ eng.id }}</td>
         <td>{{ eng.client }}</td>
         <td>
