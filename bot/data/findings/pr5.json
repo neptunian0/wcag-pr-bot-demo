@@ -1,0 +1,14 @@
+{
+  "findings": [
+    {
+      "file": "src/app/engagements/engagements.component.html",
+      "line": 13,
+      "wcag_sc": "3.3.4",
+      "severity": "non-blocking",
+      "confidence": "high",
+      "title": "Destructive bulk action with no confirmation step",
+      "message": "`archiveSelected()` mutates the status of every selected engagement in place and immediately clears the selection — there is no confirm dialog, no undo affordance, and the change isn't surfaced anywhere reversible in this UI. WCAG 3.3.4 (Error Prevention — Legal, Financial, Data) requires that actions on financial records be at least one of: reversible from the same screen, validated against likely errors, or explicitly confirmed by the user. Wrap the call in a confirm dialog showing the count and the affected client names, or add an in-line undo banner that stays visible for ~10s after the action completes. The button's markup is fine on its own — the issue is the absence of a confirmation step around a destructive operation on engagement records.",
+      "code_snippet": "        (click)=\"archiveSelected()\""
+    }
+  ]
+}
